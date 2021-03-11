@@ -56,15 +56,31 @@
 		797357FD25FA129100DAB11B /* ClaweeUI */ = {
 			isa = PBXGroup;
 			children = (
+				7973580425FA129100DAB11B /* Main.storyboard */,
+				7973580225FA129100DAB11B /* ViewController.swift */,
+				7973581325FA12B600DAB11B /* Application */,
+				7973581425FA12F600DAB11B /* Resources */,
+			);
+			path = ClaweeUI;
+			sourceTree = "<group>";
+		};
+		7973581325FA12B600DAB11B /* Application */ = {
+			isa = PBXGroup;
+			children = (
 				797357FE25FA129100DAB11B /* AppDelegate.swift */,
 				7973580025FA129100DAB11B /* SceneDelegate.swift */,
-				7973580225FA129100DAB11B /* ViewController.swift */,
-				7973580425FA129100DAB11B /* Main.storyboard */,
-				7973580725FA129400DAB11B /* Assets.xcassets */,
 				7973580925FA129400DAB11B /* LaunchScreen.storyboard */,
 				7973580C25FA129400DAB11B /* Info.plist */,
 			);
-			path = ClaweeUI;
+			path = Application;
+			sourceTree = "<group>";
+		};
+		7973581425FA12F600DAB11B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7973580725FA129400DAB11B /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,7 +304,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75DMNEQ2RM;
-				INFOPLIST_FILE = ClaweeUI/Info.plist;
+				INFOPLIST_FILE = ClaweeUI/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +323,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75DMNEQ2RM;
-				INFOPLIST_FILE = ClaweeUI/Info.plist;
+				INFOPLIST_FILE = ClaweeUI/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
