@@ -13,6 +13,15 @@
 		7973580625FA129100DAB11B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7973580425FA129100DAB11B /* Main.storyboard */; };
 		7973580825FA129400DAB11B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7973580725FA129400DAB11B /* Assets.xcassets */; };
 		7973580B25FA129400DAB11B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7973580925FA129400DAB11B /* LaunchScreen.storyboard */; };
+		7973581A25FA183100DAB11B /* SagaButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7973581925FA183100DAB11B /* SagaButton.xib */; };
+		7973581D25FA18A600DAB11B /* SagaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973581C25FA18A600DAB11B /* SagaButton.swift */; };
+		7973582025FA18E000DAB11B /* HelperCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973581F25FA18E000DAB11B /* HelperCode.swift */; };
+		7973582C25FA219B00DAB11B /* ClaweeProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973582A25FA219B00DAB11B /* ClaweeProgressBar.swift */; };
+		7973582D25FA219B00DAB11B /* ClaweeProgressBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7973582B25FA219B00DAB11B /* ClaweeProgressBar.xib */; };
+		7973583125FA221100DAB11B /* TouchScaleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973583025FA221100DAB11B /* TouchScaleButton.swift */; };
+		7973583525FA229E00DAB11B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973583425FA229E00DAB11B /* UIView+Extensions.swift */; };
+		7973583B25FA22F400DAB11B /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973583A25FA22F400DAB11B /* NibView.swift */; };
+		7973583F25FA230A00DAB11B /* NibButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973583E25FA230A00DAB11B /* NibButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +33,15 @@
 		7973580725FA129400DAB11B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7973580A25FA129400DAB11B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7973580C25FA129400DAB11B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7973581925FA183100DAB11B /* SagaButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SagaButton.xib; sourceTree = "<group>"; };
+		7973581C25FA18A600DAB11B /* SagaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SagaButton.swift; sourceTree = "<group>"; };
+		7973581F25FA18E000DAB11B /* HelperCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperCode.swift; sourceTree = "<group>"; };
+		7973582A25FA219B00DAB11B /* ClaweeProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClaweeProgressBar.swift; sourceTree = "<group>"; };
+		7973582B25FA219B00DAB11B /* ClaweeProgressBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClaweeProgressBar.xib; sourceTree = "<group>"; };
+		7973583025FA221100DAB11B /* TouchScaleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchScaleButton.swift; sourceTree = "<group>"; };
+		7973583425FA229E00DAB11B /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		7973583A25FA22F400DAB11B /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
+		7973583E25FA230A00DAB11B /* NibButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +74,9 @@
 		797357FD25FA129100DAB11B /* ClaweeUI */ = {
 			isa = PBXGroup;
 			children = (
+				7973583825FA22CA00DAB11B /* Common */,
+				7973581F25FA18E000DAB11B /* HelperCode.swift */,
+				7973581725FA174200DAB11B /* SagaButton */,
 				7973580425FA129100DAB11B /* Main.storyboard */,
 				7973580225FA129100DAB11B /* ViewController.swift */,
 				7973581325FA12B600DAB11B /* Application */,
@@ -81,6 +102,60 @@
 				7973580725FA129400DAB11B /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		7973581725FA174200DAB11B /* SagaButton */ = {
+			isa = PBXGroup;
+			children = (
+				7973582F25FA21AD00DAB11B /* BaseButton */,
+				7973582925FA218200DAB11B /* ProgressBar */,
+				7973581925FA183100DAB11B /* SagaButton.xib */,
+				7973581C25FA18A600DAB11B /* SagaButton.swift */,
+			);
+			path = SagaButton;
+			sourceTree = "<group>";
+		};
+		7973582925FA218200DAB11B /* ProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				7973582B25FA219B00DAB11B /* ClaweeProgressBar.xib */,
+				7973582A25FA219B00DAB11B /* ClaweeProgressBar.swift */,
+			);
+			path = ProgressBar;
+			sourceTree = "<group>";
+		};
+		7973582F25FA21AD00DAB11B /* BaseButton */ = {
+			isa = PBXGroup;
+			children = (
+				7973583025FA221100DAB11B /* TouchScaleButton.swift */,
+			);
+			path = BaseButton;
+			sourceTree = "<group>";
+		};
+		7973583325FA228C00DAB11B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7973583425FA229E00DAB11B /* UIView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7973583825FA22CA00DAB11B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7973583925FA22D100DAB11B /* BaseClasses */,
+				7973583325FA228C00DAB11B /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		7973583925FA22D100DAB11B /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				7973583A25FA22F400DAB11B /* NibView.swift */,
+				7973583E25FA230A00DAB11B /* NibButton.swift */,
+			);
+			path = BaseClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +217,9 @@
 			files = (
 				7973580B25FA129400DAB11B /* LaunchScreen.storyboard in Resources */,
 				7973580825FA129400DAB11B /* Assets.xcassets in Resources */,
+				7973582D25FA219B00DAB11B /* ClaweeProgressBar.xib in Resources */,
 				7973580625FA129100DAB11B /* Main.storyboard in Resources */,
+				7973581A25FA183100DAB11B /* SagaButton.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,9 +230,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7973582025FA18E000DAB11B /* HelperCode.swift in Sources */,
+				7973582C25FA219B00DAB11B /* ClaweeProgressBar.swift in Sources */,
+				7973583125FA221100DAB11B /* TouchScaleButton.swift in Sources */,
 				7973580325FA129100DAB11B /* ViewController.swift in Sources */,
 				797357FF25FA129100DAB11B /* AppDelegate.swift in Sources */,
+				7973583F25FA230A00DAB11B /* NibButton.swift in Sources */,
+				7973583B25FA22F400DAB11B /* NibView.swift in Sources */,
 				7973580125FA129100DAB11B /* SceneDelegate.swift in Sources */,
+				7973583525FA229E00DAB11B /* UIView+Extensions.swift in Sources */,
+				7973581D25FA18A600DAB11B /* SagaButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Neuron Heavy.otf">
+            <string>Neuron-Heavy</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClaweeProgressBar" customModule="Clawee" customModuleProvider="target">
+            <connections>
+                <outlet property="background" destination="k8M-Jv-UPb" id="Yog-aR-laB"/>
+                <outlet property="fillImagePlaceholder" destination="TEX-zK-Rhp" id="ZhK-Nu-I9Z"/>
+                <outlet property="textLabel" destination="M6E-Bf-wJP" id="ohH-Ej-pre"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="72" height="22"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9p-EI-VLY" userLabel="Content View">
+                    <rect key="frame" x="0.0" y="0.0" width="72" height="22"/>
+                    <subviews>
+                        <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k8M-Jv-UPb" userLabel="background">
+                            <rect key="frame" x="0.0" y="0.0" width="72" height="22"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TEX-zK-Rhp" userLabel="Fill Image Placeholder">
+                            <rect key="frame" x="2" y="2.5" width="68" height="17"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6E-Bf-wJP" customClass="GradientButtonLabel" customModule="Clawee" customModuleProvider="target">
+                            <rect key="frame" x="30" y="4" width="12.5" height="14"/>
+                            <fontDescription key="fontDescription" name="Neuron-Heavy" family="Neuron" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="outlineWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
+                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="k8M-Jv-UPb" firstAttribute="centerY" secondItem="Z9p-EI-VLY" secondAttribute="centerY" id="0W0-KD-Ms2"/>
+                        <constraint firstItem="TEX-zK-Rhp" firstAttribute="width" secondItem="k8M-Jv-UPb" secondAttribute="width" multiplier="0.95" placeholder="YES" id="4ib-Qb-o1L"/>
+                        <constraint firstItem="TEX-zK-Rhp" firstAttribute="centerY" secondItem="k8M-Jv-UPb" secondAttribute="centerY" id="73y-xL-Gvi"/>
+                        <constraint firstItem="TEX-zK-Rhp" firstAttribute="height" secondItem="k8M-Jv-UPb" secondAttribute="height" multiplier="0.777778" placeholder="YES" id="Dat-0i-ypP"/>
+                        <constraint firstItem="TEX-zK-Rhp" firstAttribute="centerX" secondItem="k8M-Jv-UPb" secondAttribute="centerX" id="ECg-gW-snY"/>
+                        <constraint firstItem="M6E-Bf-wJP" firstAttribute="centerY" secondItem="Z9p-EI-VLY" secondAttribute="centerY" id="SOW-Ke-ANT"/>
+                        <constraint firstItem="k8M-Jv-UPb" firstAttribute="top" secondItem="Z9p-EI-VLY" secondAttribute="top" id="eKg-6a-d94"/>
+                        <constraint firstItem="M6E-Bf-wJP" firstAttribute="centerX" secondItem="Z9p-EI-VLY" secondAttribute="centerX" id="ftH-mb-l2C"/>
+                        <constraint firstItem="k8M-Jv-UPb" firstAttribute="centerX" secondItem="Z9p-EI-VLY" secondAttribute="centerX" id="x0B-7s-sgj"/>
+                        <constraint firstItem="k8M-Jv-UPb" firstAttribute="leading" secondItem="Z9p-EI-VLY" secondAttribute="leading" id="z92-Bf-I6r"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Z9p-EI-VLY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="QOV-gj-bJz"/>
+                <constraint firstAttribute="trailing" secondItem="Z9p-EI-VLY" secondAttribute="trailing" id="ko2-Fv-Sz0"/>
+                <constraint firstAttribute="bottom" secondItem="Z9p-EI-VLY" secondAttribute="bottom" id="tvp-LM-CdO"/>
+                <constraint firstItem="Z9p-EI-VLY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zhd-5l-7ah"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="317.39130434782612" y="48.883928571428569"/>
+        </view>
+    </objects>
+</document>
