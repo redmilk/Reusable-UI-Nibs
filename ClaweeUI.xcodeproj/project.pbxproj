@@ -74,13 +74,12 @@
 		797357FD25FA129100DAB11B /* ClaweeUI */ = {
 			isa = PBXGroup;
 			children = (
-				7973583825FA22CA00DAB11B /* Common */,
-				7973581F25FA18E000DAB11B /* HelperCode.swift */,
 				7973581725FA174200DAB11B /* SagaButton */,
-				7973580425FA129100DAB11B /* Main.storyboard */,
-				7973580225FA129100DAB11B /* ViewController.swift */,
+				7973584525FA24BE00DAB11B /* MainModule */,
+				7973583825FA22CA00DAB11B /* Common */,
 				7973581325FA12B600DAB11B /* Application */,
 				7973581425FA12F600DAB11B /* Resources */,
+				7973581F25FA18E000DAB11B /* HelperCode.swift */,
 			);
 			path = ClaweeUI;
 			sourceTree = "<group>";
@@ -156,6 +155,15 @@
 				7973583E25FA230A00DAB11B /* NibButton.swift */,
 			);
 			path = BaseClasses;
+			sourceTree = "<group>";
+		};
+		7973584525FA24BE00DAB11B /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				7973580425FA129100DAB11B /* Main.storyboard */,
+				7973580225FA129100DAB11B /* ViewController.swift */,
+			);
+			path = MainModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
