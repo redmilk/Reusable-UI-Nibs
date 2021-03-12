@@ -13,7 +13,6 @@ struct ClaweeProgressBarEntity {
     let fillImage: String
     let text: String?
     let progressFromZeroToOne: CGFloat
-    let animationDuration: TimeInterval = 0
 }
 
 //In order for the ClaweeProgressBar to work (look) correctly, use the assets with NO PADDINGS only - ask your designer to help

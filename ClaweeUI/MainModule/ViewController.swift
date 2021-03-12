@@ -22,12 +22,11 @@ class ViewController: UIViewController {
         let today: Date = Date()
         let nextDate: Date = Calendar.current.date(byAdding: .day, value: 3, to: today)!
 
+        let heartProgressState = PlaySagaButton.HeartProgressState(progress: 0.2, heartsCount: 3)
         let timerState = PlaySagaButton.TimerState(timerExpirationDate: nextDate) {
             Logger.log("Timer time has gone", type: .all)
         }
         
-        let heartProgressState = PlaySagaButton.HeartProgressState(progress: 0.2, heartsCount: 3)
-                
         let initialState = PlaySagaButton.InitialState(isTopTitleHidden: false,
                                                    timerState: timerState,
                                                    heartProgressState: heartProgressState)
