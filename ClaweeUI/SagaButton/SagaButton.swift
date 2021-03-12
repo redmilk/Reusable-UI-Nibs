@@ -17,45 +17,33 @@ fileprivate let heartLabelTextOutlineColor: UIColor = #colorLiteral(red: 0.00245
 fileprivate let heartLabelTextOutlineWidth: CGFloat = 1.0
 fileprivate let progressBackgroundImageName: String = "heartBar"
 fileprivate let progressFillImageName: String = "fill"
+fileprivate let progressAnimationDuration: TimeInterval = 1.0
 
 extension SagaButton {
     
     /// States of the xib's components
-    enum States {
-        case initial(Initial)
-        case common(Common)
-        case timer(Timer)
-        case progress(Progress)
-        case heart(Heart)
-        
-        /// this state we use once during initial setup of this xib
-        /// other states we use for separated updates of xib's components during lifecycle
-        struct Initial {
-            var commonState: Common
-            var timerState: Timer
-            var progressState: Progress
-            var heartState: Heart
-        }
-        
-        struct Common {
-            let isTopTitleHidden: Bool = false
-        }
-        
-        struct Timer {
-            let timerExpirationDate: Date?
-            let onTimerDidExpire: (() -> Void)?
-        }
-        
-        struct Progress {
-            let progress: CGFloat
-            let progressAnimationDuration: TimeInterval = 1.0
-            let text: String? = nil
-        }
-        
-        struct Heart {
-            let heartsCount: Int
-            let isAnimateHeartValue: Bool = false
-        }
+    enum State {
+        case initial(InitialState)
+        case timer(TimerState)
+        case heartProgress(HeartProgressState)
+    }
+    
+    /// this state we use once during initial setup of this xib
+    /// other states we use for separated updates of xib's components during lifecycle
+    struct InitialState {
+        var isTopTitleHidden: Bool
+        var timerState: TimerState
+        var heartProgressState: HeartProgressState
+    }
+    
+    struct TimerState {
+        let timerExpirationDate: Date
+        let onTimerDidExpire: (() -> Void)?
+    }
+    
+    struct HeartProgressState {
+        let progress: CGFloat
+        var heartsCount: Int
     }
 }
 
@@ -71,29 +59,25 @@ final class SagaButton: TouchScaleButton {
     @IBOutlet private weak var heartCounterLabel: GradientButtonLabel!
     @IBOutlet private weak var heartImageView: UIImageView!
     
-    private var currentState: States.Initial!
+    private var currentState: InitialState!
     private let timer: ClaweeTimer = ClaweeTimer()
     
     // MARK: - The only public API
-    public func updateState(_ state: States) {
+    public func update(with state: State) {
         switch state {
         
         /// entry point for xib usage, here we configure xib's initial state
         case .initial(let initial):
             currentState = initial
-            updateCommonState(with: initial.commonState)
+            topTitleLabel.isHidden = initial.isTopTitleHidden
             updateTimer(with: initial.timerState)
-            updateProgress(with: initial.progressState)
-            updateHearts(with: initial.heartState)
-            
+            updateHeartProgress(with: initial.heartProgressState)
+
         /// updates during lifecycle
         case .timer(let timerState): updateTimer(with: timerState)
-        case .progress(let progressState): updateProgress(with: progressState)
-        case .heart(let heartState): updateHearts(with: heartState)
-        case .common(let commonState): updateCommonState(with: commonState)
+        case .heartProgress(let heartProgressState): updateHeartProgress(with: heartProgressState)
         }
     }
-    
     
     // MARK: - System
     override init(frame: CGRect) {
@@ -118,40 +102,44 @@ private extension SagaButton {
     // MARK: - Specific state updates
     
     /// promotion duration timer updates
-    private func updateTimer(with timerState: States.Timer) {
+    private func updateTimer(with timerState: TimerState) {
         currentState.timerState = timerState
-        guard let timerExpirationDate = currentState.timerState.timerExpirationDate,
-              let onTimerDidExpire = currentState.timerState.onTimerDidExpire else { return }
-        startTimer(expirationDate: timerExpirationDate,
-                   timerDidEnd: onTimerDidExpire)
+        startTimer(expirationDate: timerState.timerExpirationDate,
+                   timerDidEnd: timerState.onTimerDidExpire)
     }
     
-    /// progress updates
-    private func updateProgress(with progressState: States.Progress) {
-        currentState.progressState = progressState
-        guard currentState.progressState.progress <= progressState.progress else { return }
-        progressBar.set(progres: progressState.progress, text: progressState.text, animationDuration: progressState.progressAnimationDuration)
-    }
-    
-    /// for managing hearts counter and it's animation, it also depends on progress animation duration
-    private func updateHearts(with heartState: States.Heart) {
-        currentState.heartState = heartState
-        /// for waiting progress bar animation, before setting new value to hearts label
-        DispatchQueue.main.asyncAfter(deadline: .now() + currentState.progressState.progressAnimationDuration) {
-            self.heartCounterLabel.text = heartState.heartsCount.description
-            if heartState.isAnimateHeartValue {
-                self.animateNewHeartValue()
+    /// heart level and progress updates
+    private func updateHeartProgress(with newHeartProgressState: HeartProgressState) {
+        let currentHeartLevel = currentState.heartProgressState.heartsCount
+        let newProgress = newHeartProgressState.progress
+        let newHeartLevel = newHeartProgressState.heartsCount
+        let levelDifference = newHeartLevel - currentHeartLevel
+        currentState.heartProgressState = newHeartProgressState
+
+        /// if new level is higher than current and more than one
+        if levelDifference >= 1 {
+            progressBar.set(progres: 1.0, text: nil, animationDuration: progressAnimationDuration)
+            DispatchQueue.main.asyncAfter(deadline: .now() + progressAnimationDuration) {
+                self.progressBar.set(progres: 0.0, text: nil, animationDuration: 0.0)
+                self.incrementHeartLevel(to: currentHeartLevel + levelDifference, isAnimateHeartLevel: true)
+                self.progressBar.set(progres: newProgress, text: nil, animationDuration: progressAnimationDuration)
             }
+        /// if new level is equal to current, just update progress
+        } else {
+            progressBar.set(progres: newProgress, text: nil, animationDuration: progressAnimationDuration)
         }
     }
     
-    /// hiding/showing top label with "PLAY SAGA", also for other future flags or properties
-    private func updateCommonState(with commonState: States.Common) {
-        currentState.commonState = commonState
-        topTitleLabel.isHidden = currentState.commonState.isTopTitleHidden
+    // MARK: - Internal helpers
+    private func incrementHeartLevel(to level: Int, isAnimateHeartLevel: Bool) {
+        progressBar.set(progres: 0, text: nil, animationDuration: 0.0)
+        currentState.heartProgressState.heartsCount = level
+        heartCounterLabel.text = currentState.heartProgressState.heartsCount.description
+        if isAnimateHeartLevel {
+            animateNewHeartValue()
+        }
     }
     
-    // MARK: - Internal
     private func startTimer(expirationDate: Date, timerDidEnd: (() -> Void)?) {
         timerLabel.text = String.timeStringForExpirationTime(using: expirationDate.timeIntervalSince1970, isShortFormat: false)
         timer.run(tillExpirationDateInMillisecondsSince1970: expirationDate.timeIntervalSince1970 * 1000,
