@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var sagaButton: SagaButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,28 +19,17 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        //addSagaButton()
-
-    }
-    
-    private func addSagaButton() {
-        let button = TouchScaleButton()
-        button.setImage(UIImage(named: "goToSaga"), for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(handleSagaButtonTouch(_ :)), for: .touchUpInside)
-        self.view.addSubview(button)
+        let model = ClaweeProgressBarEntity(backgroundImage: "heartBar", fillImage: "fill", text: nil, progressFromZeroToOne: 0.3)
         
-        NSLayoutConstraint.activate([
-            button.heightAnchor.constraint(equalToConstant: 80),
-            button.widthAnchor.constraint(equalToConstant: 84),
-            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            button.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
-    }
-    
-    @objc func handleSagaButtonTouch(_ :Int) {
+        sagaButton.configure(with: model)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.sagaButton.setProgress(with: 0.8)
+        }
+        
         
     }
+    
     
     
 }

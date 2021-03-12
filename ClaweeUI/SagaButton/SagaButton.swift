@@ -11,6 +11,15 @@ final class SagaButton: TouchScaleButton {
 
     @IBOutlet private weak var contentView: UIView!
     @IBOutlet private weak var containerView: UIView!
+    @IBOutlet weak var progressBar: ClaweeProgressBar!
+    
+    public func configure(with model: ClaweeProgressBarEntity) {
+        progressBar.configure(with: model)
+    }
+    
+    public func setProgress(with progress: CGFloat) {
+        progressBar.set(progres: progress, text: nil)
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,7 +33,6 @@ final class SagaButton: TouchScaleButton {
 
     private func customInit() {
         Bundle.main.loadNibNamed(String(describing: Self.self), owner: self, options: nil)
-
         self.addSubview(self.contentView)
         self.contentView.frame = self.bounds
         self.contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]

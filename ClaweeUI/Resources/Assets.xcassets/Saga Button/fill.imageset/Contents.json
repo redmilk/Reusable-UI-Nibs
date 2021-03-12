@@ -5,12 +5,12 @@
       "scale" : "1x"
     },
     {
-      "filename" : "sagaIcon@2x-min.png",
+      "filename" : "fill@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "sagaIcon@3x-min.png",
+      "filename" : "fill@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

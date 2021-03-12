@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,30 +16,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kV-tW-Al7" customClass="SagaButton" customModule="ClaweeUI" customModuleProvider="target">
-                                <rect key="frame" x="159.5" y="405.5" width="95" height="95"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="157" y="403" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="5kV-tW-Al7" secondAttribute="height" multiplier="1:1" id="gCi-QC-RQM"/>
-                                    <constraint firstAttribute="height" constant="95" id="ghH-UX-9k5"/>
+                                    <constraint firstAttribute="width" constant="100" id="2t7-DO-bJh"/>
+                                    <constraint firstAttribute="height" constant="100" id="ghH-UX-9k5"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5kV-tW-Al7" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="rif-0J-M4M"/>
                             <constraint firstItem="5kV-tW-Al7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zDh-SJ-rSE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sagaButton" destination="5kV-tW-Al7" id="3Eh-dO-UxR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-14.492753623188406" y="16.741071428571427"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

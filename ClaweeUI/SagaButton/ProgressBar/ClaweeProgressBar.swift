@@ -6,12 +6,12 @@
 //  Copyright © 2021 Noisy Miner. All rights reserved.
 //
 
-import UIKit
+import UIKit 
 
 struct ClaweeProgressBarEntity {
     let backgroundImage: String
     let fillImage: String
-    let text: String
+    let text: String?
     let progressFromZeroToOne: CGFloat
 }
 
@@ -31,12 +31,15 @@ final class ClaweeProgressBar: NibView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        fillImage?.frame = CGRect(
+        let newRect = CGRect(
             x: 0,
             y: 0,
             width: widthMultiplier * fillImagePlaceholder.frame.width,
             height: fillImagePlaceholder.frame.height)
+        
+        UIView.animate(withDuration: 0.3) {
+            self.fillImage?.frame = newRect
+        }
     }
     
     //Public Methods
@@ -119,6 +122,7 @@ private extension ClaweeProgressBar {
         
         fillImagePlaceholderHeight.isActive = true
         fillImagePlaceholderWidth.isActive = true
-        placeholder.layoutIfNeeded()
+        
+        layoutIfNeeded()
     }
 }

@@ -22,6 +22,16 @@
 		7973583525FA229E00DAB11B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973583425FA229E00DAB11B /* UIView+Extensions.swift */; };
 		7973583B25FA22F400DAB11B /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973583A25FA22F400DAB11B /* NibView.swift */; };
 		7973583F25FA230A00DAB11B /* NibButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973583E25FA230A00DAB11B /* NibButton.swift */; };
+		7973589B25FB50B500DAB11B /* Neuron Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7973589525FB50B500DAB11B /* Neuron Black.otf */; };
+		7973589C25FB50B500DAB11B /* Neuron ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7973589625FB50B500DAB11B /* Neuron ExtraBold.otf */; };
+		7973589D25FB50B500DAB11B /* Neuron Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7973589725FB50B500DAB11B /* Neuron Heavy.otf */; };
+		7973589E25FB50B500DAB11B /* Neuron Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7973589825FB50B500DAB11B /* Neuron Bold.otf */; };
+		7973589F25FB50B500DAB11B /* Neuron_Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7973589925FB50B500DAB11B /* Neuron_Light.otf */; };
+		797358A025FB50B500DAB11B /* Neuron_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7973589A25FB50B500DAB11B /* Neuron_Regular.otf */; };
+		797358A425FB5CDF00DAB11B /* ClaweeTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797358A325FB5CDF00DAB11B /* ClaweeTimer.swift */; };
+		797358A925FB5D8500DAB11B /* GradientButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797358A725FB5D8500DAB11B /* GradientButtonLabel.swift */; };
+		797358AC25FB5F0800DAB11B /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797358AB25FB5F0800DAB11B /* UILabel+Extensions.swift */; };
+		797358B425FB61F100DAB11B /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797358B325FB61F100DAB11B /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +52,16 @@
 		7973583425FA229E00DAB11B /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		7973583A25FA22F400DAB11B /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 		7973583E25FA230A00DAB11B /* NibButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibButton.swift; sourceTree = "<group>"; };
+		7973589525FB50B500DAB11B /* Neuron Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neuron Black.otf"; sourceTree = "<group>"; };
+		7973589625FB50B500DAB11B /* Neuron ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neuron ExtraBold.otf"; sourceTree = "<group>"; };
+		7973589725FB50B500DAB11B /* Neuron Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neuron Heavy.otf"; sourceTree = "<group>"; };
+		7973589825FB50B500DAB11B /* Neuron Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neuron Bold.otf"; sourceTree = "<group>"; };
+		7973589925FB50B500DAB11B /* Neuron_Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Neuron_Light.otf; sourceTree = "<group>"; };
+		7973589A25FB50B500DAB11B /* Neuron_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Neuron_Regular.otf; sourceTree = "<group>"; };
+		797358A325FB5CDF00DAB11B /* ClaweeTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClaweeTimer.swift; sourceTree = "<group>"; };
+		797358A725FB5D8500DAB11B /* GradientButtonLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientButtonLabel.swift; sourceTree = "<group>"; };
+		797358AB25FB5F0800DAB11B /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		797358B325FB61F100DAB11B /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +118,7 @@
 		7973581425FA12F600DAB11B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7973589325FB50A800DAB11B /* Fonts */,
 				7973580725FA129400DAB11B /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -106,10 +127,10 @@
 		7973581725FA174200DAB11B /* SagaButton */ = {
 			isa = PBXGroup;
 			children = (
-				7973582F25FA21AD00DAB11B /* BaseButton */,
-				7973582925FA218200DAB11B /* ProgressBar */,
 				7973581925FA183100DAB11B /* SagaButton.xib */,
 				7973581C25FA18A600DAB11B /* SagaButton.swift */,
+				7973582925FA218200DAB11B /* ProgressBar */,
+				7973582F25FA21AD00DAB11B /* BaseButton */,
 			);
 			path = SagaButton;
 			sourceTree = "<group>";
@@ -135,6 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				7973583425FA229E00DAB11B /* UIView+Extensions.swift */,
+				797358AB25FB5F0800DAB11B /* UILabel+Extensions.swift */,
+				797358B325FB61F100DAB11B /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -142,6 +165,7 @@
 		7973583825FA22CA00DAB11B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				797358A225FB5CCB00DAB11B /* Utils */,
 				7973583925FA22D100DAB11B /* BaseClasses */,
 				7973583325FA228C00DAB11B /* Extensions */,
 			);
@@ -164,6 +188,36 @@
 				7973580225FA129100DAB11B /* ViewController.swift */,
 			);
 			path = MainModule;
+			sourceTree = "<group>";
+		};
+		7973589325FB50A800DAB11B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7973589425FB50B500DAB11B /* Neuron */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		7973589425FB50B500DAB11B /* Neuron */ = {
+			isa = PBXGroup;
+			children = (
+				7973589525FB50B500DAB11B /* Neuron Black.otf */,
+				7973589625FB50B500DAB11B /* Neuron ExtraBold.otf */,
+				7973589725FB50B500DAB11B /* Neuron Heavy.otf */,
+				7973589825FB50B500DAB11B /* Neuron Bold.otf */,
+				7973589925FB50B500DAB11B /* Neuron_Light.otf */,
+				7973589A25FB50B500DAB11B /* Neuron_Regular.otf */,
+			);
+			path = Neuron;
+			sourceTree = "<group>";
+		};
+		797358A225FB5CCB00DAB11B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				797358A725FB5D8500DAB11B /* GradientButtonLabel.swift */,
+				797358A325FB5CDF00DAB11B /* ClaweeTimer.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,11 +277,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7973589C25FB50B500DAB11B /* Neuron ExtraBold.otf in Resources */,
 				7973580B25FA129400DAB11B /* LaunchScreen.storyboard in Resources */,
 				7973580825FA129400DAB11B /* Assets.xcassets in Resources */,
+				7973589D25FB50B500DAB11B /* Neuron Heavy.otf in Resources */,
 				7973582D25FA219B00DAB11B /* ClaweeProgressBar.xib in Resources */,
+				7973589E25FB50B500DAB11B /* Neuron Bold.otf in Resources */,
 				7973580625FA129100DAB11B /* Main.storyboard in Resources */,
+				7973589F25FB50B500DAB11B /* Neuron_Light.otf in Resources */,
+				797358A025FB50B500DAB11B /* Neuron_Regular.otf in Resources */,
 				7973581A25FA183100DAB11B /* SagaButton.xib in Resources */,
+				7973589B25FB50B500DAB11B /* Neuron Black.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,9 +300,13 @@
 			files = (
 				7973582025FA18E000DAB11B /* HelperCode.swift in Sources */,
 				7973582C25FA219B00DAB11B /* ClaweeProgressBar.swift in Sources */,
+				797358A925FB5D8500DAB11B /* GradientButtonLabel.swift in Sources */,
 				7973583125FA221100DAB11B /* TouchScaleButton.swift in Sources */,
 				7973580325FA129100DAB11B /* ViewController.swift in Sources */,
 				797357FF25FA129100DAB11B /* AppDelegate.swift in Sources */,
+				797358AC25FB5F0800DAB11B /* UILabel+Extensions.swift in Sources */,
+				797358A425FB5CDF00DAB11B /* ClaweeTimer.swift in Sources */,
+				797358B425FB61F100DAB11B /* String+Extensions.swift in Sources */,
 				7973583F25FA230A00DAB11B /* NibButton.swift in Sources */,
 				7973583B25FA22F400DAB11B /* NibView.swift in Sources */,
 				7973580125FA129100DAB11B /* SceneDelegate.swift in Sources */,
