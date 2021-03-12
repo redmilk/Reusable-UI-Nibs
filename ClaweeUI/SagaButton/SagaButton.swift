@@ -49,7 +49,6 @@ extension SagaButton {
         struct Progress {
             let progress: CGFloat
             let progressAnimationDuration: TimeInterval = 1.0
-            //let progressBlockAnimationDidFinished: (() -> Void)?
             let text: String? = nil
         }
         
@@ -79,7 +78,7 @@ final class SagaButton: TouchScaleButton {
     public func updateState(_ state: States) {
         switch state {
         
-        /// entry point for xib usage
+        /// entry point for xib usage, here we configure xib's initial state
         case .initial(let initial):
             currentState = initial
             updateCommonState(with: initial.commonState)
