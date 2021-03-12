@@ -22,6 +22,7 @@
                 <outlet property="containerView" destination="hy8-gn-8pI" id="LLk-df-KKz"/>
                 <outlet property="contentView" destination="2Rx-hV-dec" id="aru-P6-cVJ"/>
                 <outlet property="heartCounterLabel" destination="Ixy-fB-k1C" id="FvV-Ow-Pg7"/>
+                <outlet property="heartImageView" destination="ziE-jP-I4n" id="NwQ-yI-NRC"/>
                 <outlet property="progressBar" destination="nNZ-kJ-BX7" id="xfn-Gx-WkO"/>
                 <outlet property="progressContainerView" destination="3Vg-Vm-0mz" id="aCj-Ny-J9N"/>
                 <outlet property="timerContainerView" destination="OpW-wz-02a" id="QDu-co-xFR"/>

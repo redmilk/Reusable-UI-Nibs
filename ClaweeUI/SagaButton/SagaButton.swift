@@ -35,6 +35,7 @@ final class SagaButton: TouchScaleButton {
     @IBOutlet private weak var timerContainerView: UIView!
     @IBOutlet private weak var timerLabel: UILabel!
     @IBOutlet private weak var heartCounterLabel: GradientButtonLabel!
+    @IBOutlet private weak var heartImageView: UIImageView!
     
     private let timer: ClaweeTimer = ClaweeTimer()
     
@@ -56,6 +57,7 @@ final class SagaButton: TouchScaleButton {
             /// for waiting progress bar animation, before setting new value to hearts label
             DispatchQueue.main.asyncAfter(deadline: .now() + animationDuration) {
                 self.heartCounterLabel.text = heartsCount.description
+                self.animateNewHeartValue()
             }
         }
     }
@@ -107,5 +109,19 @@ final class SagaButton: TouchScaleButton {
         self.addSubview(self.contentView)
         self.contentView.frame = self.bounds
         self.contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+    }
+    
+    private func animateNewHeartValue() {
+        heartCounterLabel.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+        heartImageView.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+        UIView.animate(withDuration: 0.7,
+                       delay: 0,
+                       usingSpringWithDamping: 0.2,
+                       initialSpringVelocity: 6.0,
+                       animations: {
+                        self.heartCounterLabel.transform = .identity
+                        self.heartImageView.transform = .identity
+                       },
+                       completion: nil)
     }
 }
