@@ -19,7 +19,7 @@ fileprivate let progressBackgroundImageName: String = "heartBar"
 fileprivate let progressFillImageName: String = "fill"
 fileprivate let progressAnimationDuration: TimeInterval = 1.0
 
-extension SagaButton {
+extension PlaySagaButton {
     
     /// States of the xib's components
     enum State {
@@ -47,7 +47,7 @@ extension SagaButton {
     }
 }
 
-final class SagaButton: TouchScaleButton {
+final class PlaySagaButton: TouchScaleButton {
 
     @IBOutlet private weak var contentView: UIView!
     @IBOutlet private weak var containerView: UIView!
@@ -98,7 +98,7 @@ final class SagaButton: TouchScaleButton {
 }
 
 
-private extension SagaButton {
+private extension PlaySagaButton {
     // MARK: - Specific state updates
     
     /// promotion duration timer updates

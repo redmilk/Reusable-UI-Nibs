@@ -13,8 +13,8 @@
 		7973580625FA129100DAB11B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7973580425FA129100DAB11B /* Main.storyboard */; };
 		7973580825FA129400DAB11B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7973580725FA129400DAB11B /* Assets.xcassets */; };
 		7973580B25FA129400DAB11B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7973580925FA129400DAB11B /* LaunchScreen.storyboard */; };
-		7973581A25FA183100DAB11B /* SagaButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7973581925FA183100DAB11B /* SagaButton.xib */; };
-		7973581D25FA18A600DAB11B /* SagaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973581C25FA18A600DAB11B /* SagaButton.swift */; };
+		7973581A25FA183100DAB11B /* PlaySagaButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7973581925FA183100DAB11B /* PlaySagaButton.xib */; };
+		7973581D25FA18A600DAB11B /* PlaySagaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973581C25FA18A600DAB11B /* PlaySagaButton.swift */; };
 		7973582025FA18E000DAB11B /* HelperCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973581F25FA18E000DAB11B /* HelperCode.swift */; };
 		7973582C25FA219B00DAB11B /* ClaweeProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973582A25FA219B00DAB11B /* ClaweeProgressBar.swift */; };
 		7973582D25FA219B00DAB11B /* ClaweeProgressBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7973582B25FA219B00DAB11B /* ClaweeProgressBar.xib */; };
@@ -45,8 +45,8 @@
 		7973580725FA129400DAB11B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7973580A25FA129400DAB11B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7973580C25FA129400DAB11B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7973581925FA183100DAB11B /* SagaButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SagaButton.xib; sourceTree = "<group>"; };
-		7973581C25FA18A600DAB11B /* SagaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SagaButton.swift; sourceTree = "<group>"; };
+		7973581925FA183100DAB11B /* PlaySagaButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaySagaButton.xib; sourceTree = "<group>"; };
+		7973581C25FA18A600DAB11B /* PlaySagaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySagaButton.swift; sourceTree = "<group>"; };
 		7973581F25FA18E000DAB11B /* HelperCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperCode.swift; sourceTree = "<group>"; };
 		7973582A25FA219B00DAB11B /* ClaweeProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClaweeProgressBar.swift; sourceTree = "<group>"; };
 		7973582B25FA219B00DAB11B /* ClaweeProgressBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClaweeProgressBar.xib; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 		797357FD25FA129100DAB11B /* ClaweeUI */ = {
 			isa = PBXGroup;
 			children = (
-				7973581725FA174200DAB11B /* SagaButton */,
+				7973581725FA174200DAB11B /* PlaySagaButton */,
 				7973584525FA24BE00DAB11B /* MainModule */,
 				7973583825FA22CA00DAB11B /* Common */,
 				7973581325FA12B600DAB11B /* Application */,
@@ -128,15 +128,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		7973581725FA174200DAB11B /* SagaButton */ = {
+		7973581725FA174200DAB11B /* PlaySagaButton */ = {
 			isa = PBXGroup;
 			children = (
-				7973581925FA183100DAB11B /* SagaButton.xib */,
-				7973581C25FA18A600DAB11B /* SagaButton.swift */,
+				7973581925FA183100DAB11B /* PlaySagaButton.xib */,
+				7973581C25FA18A600DAB11B /* PlaySagaButton.swift */,
 				7973582925FA218200DAB11B /* ProgressBar */,
 				7973582F25FA21AD00DAB11B /* BaseView */,
 			);
-			path = SagaButton;
+			path = PlaySagaButton;
 			sourceTree = "<group>";
 		};
 		7973582925FA218200DAB11B /* ProgressBar */ = {
@@ -300,7 +300,7 @@
 				7973580625FA129100DAB11B /* Main.storyboard in Resources */,
 				7973589F25FB50B500DAB11B /* Neuron_Light.otf in Resources */,
 				797358A025FB50B500DAB11B /* Neuron_Regular.otf in Resources */,
-				7973581A25FA183100DAB11B /* SagaButton.xib in Resources */,
+				7973581A25FA183100DAB11B /* PlaySagaButton.xib in Resources */,
 				7973589B25FB50B500DAB11B /* Neuron Black.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,7 +327,7 @@
 				7973583B25FA22F400DAB11B /* NibView.swift in Sources */,
 				7973580125FA129100DAB11B /* SceneDelegate.swift in Sources */,
 				7973583525FA229E00DAB11B /* UIView+Extensions.swift in Sources */,
-				7973581D25FA18A600DAB11B /* SagaButton.swift in Sources */,
+				7973581D25FA18A600DAB11B /* PlaySagaButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
