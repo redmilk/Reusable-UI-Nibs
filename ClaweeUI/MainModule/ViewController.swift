@@ -18,13 +18,17 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        let today: Date = Date()
+        let nextDate: Date = Calendar.current.date(byAdding: .second, value: 10, to: today)!
+
+        let sagaButtonState = SagaButton.State(progress: 0.1, heartsCount: 3, timerExpirationDate: nextDate) {
+            Logger.log("Timer did finished")
+        }
+        sagaButton.configure(with: sagaButtonState)
+   
         
-        let model = ClaweeProgressBarEntity(backgroundImage: "heartBar", fillImage: "fill", text: nil, progressFromZeroToOne: 0.3)
-        
-        sagaButton.configure(with: model)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.sagaButton.setProgress(with: 0.8)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.sagaButton.setHeartProgressState(with: 0.7, animationDuration: 1.0, heartsCount: 4)
         }
         
         

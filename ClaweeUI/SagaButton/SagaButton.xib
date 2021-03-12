@@ -3,15 +3,30 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Neuron Black.otf">
+            <string>Neuron-Black</string>
+        </array>
+        <array key="Neuron Bold.otf">
+            <string>Neuron-Bold</string>
+        </array>
+        <array key="Neuron ExtraBold.otf">
+            <string>Neuron-ExtraBold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SagaButton" customModule="ClaweeUI" customModuleProvider="target">
             <connections>
                 <outlet property="containerView" destination="hy8-gn-8pI" id="LLk-df-KKz"/>
                 <outlet property="contentView" destination="2Rx-hV-dec" id="aru-P6-cVJ"/>
+                <outlet property="heartCounterLabel" destination="Ixy-fB-k1C" id="FvV-Ow-Pg7"/>
                 <outlet property="progressBar" destination="nNZ-kJ-BX7" id="xfn-Gx-WkO"/>
+                <outlet property="progressContainerView" destination="3Vg-Vm-0mz" id="aCj-Ny-J9N"/>
+                <outlet property="timerContainerView" destination="OpW-wz-02a" id="QDu-co-xFR"/>
+                <outlet property="timerLabel" destination="WPC-bh-Wtj" id="xEL-Hg-U3c"/>
+                <outlet property="topTitleLabel" destination="AQo-CS-K7u" id="hL0-P1-aG8"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -22,28 +37,6 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hy8-gn-8pI" userLabel="containerView">
                     <rect key="frame" x="0.0" y="0.0" width="224" height="220"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BgE-1O-b0C">
-                            <rect key="frame" x="75" y="45" width="74" height="22"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQo-CS-K7u">
-                                    <rect key="frame" x="16" y="0.5" width="42" height="21"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="42" id="7Zq-cf-Ecy"/>
-                                        <constraint firstAttribute="height" constant="21" id="nhd-Gj-HXz"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="22" id="FJi-BL-cZ2"/>
-                                <constraint firstItem="AQo-CS-K7u" firstAttribute="centerY" secondItem="BgE-1O-b0C" secondAttribute="centerY" id="WaF-Y2-24H"/>
-                                <constraint firstAttribute="width" constant="74" id="Y3d-QH-hqA"/>
-                                <constraint firstItem="AQo-CS-K7u" firstAttribute="centerX" secondItem="BgE-1O-b0C" secondAttribute="centerX" id="bxB-qV-vvD"/>
-                            </constraints>
-                        </view>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="rnN-II-SVC">
                             <rect key="frame" x="75.5" y="75" width="73" height="70"/>
                             <constraints>
@@ -61,9 +54,9 @@
                                         <constraint firstAttribute="width" constant="52" id="qlN-7x-ILP"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28h:41m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPC-bh-Wtj">
-                                    <rect key="frame" x="5" y="6" width="42" height="12"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11h:11m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPC-bh-Wtj">
+                                    <rect key="frame" x="6" y="5.5" width="40" height="13.5"/>
+                                    <fontDescription key="fontDescription" name="Neuron-Bold" family="Neuron" pointSize="12"/>
                                     <color key="textColor" red="0.97574084999999999" green="0.88994425539999999" blue="0.29764252899999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -103,28 +96,61 @@
                                         <constraint firstAttribute="width" constant="25" id="TME-RC-TJA"/>
                                     </constraints>
                                 </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixy-fB-k1C" customClass="GradientButtonLabel" customModule="ClaweeUI" customModuleProvider="target">
+                                    <rect key="frame" x="28" y="3.5" width="21" height="17"/>
+                                    <fontDescription key="fontDescription" name="Neuron-ExtraBold" family="Neuron" pointSize="12"/>
+                                    <color key="textColor" red="1" green="0.99998790029999995" blue="0.9999920726" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="Ixy-fB-k1C" firstAttribute="centerY" secondItem="ziE-jP-I4n" secondAttribute="centerY" constant="-1" id="BSy-a4-6Mh"/>
                                 <constraint firstItem="ziE-jP-I4n" firstAttribute="centerY" secondItem="kkO-XN-nmp" secondAttribute="centerY" id="DdD-eX-b3g"/>
+                                <constraint firstItem="Ixy-fB-k1C" firstAttribute="height" secondItem="ziE-jP-I4n" secondAttribute="height" multiplier="0.73913" id="MI2-Bz-X0u"/>
+                                <constraint firstItem="Ixy-fB-k1C" firstAttribute="width" secondItem="ziE-jP-I4n" secondAttribute="width" multiplier="0.84" id="OQA-XD-WH7"/>
                                 <constraint firstItem="nNZ-kJ-BX7" firstAttribute="centerY" secondItem="kkO-XN-nmp" secondAttribute="centerY" id="SRk-dc-ni4"/>
                                 <constraint firstItem="nNZ-kJ-BX7" firstAttribute="leading" secondItem="kkO-XN-nmp" secondAttribute="leading" constant="2" id="Smg-yF-6d2"/>
                                 <constraint firstItem="kkO-XN-nmp" firstAttribute="centerY" secondItem="3Vg-Vm-0mz" secondAttribute="centerY" id="X9w-6H-a0m"/>
                                 <constraint firstAttribute="height" constant="26" id="cV4-tU-cG6"/>
                                 <constraint firstAttribute="width" constant="52" id="hPB-Qp-ca6"/>
                                 <constraint firstItem="ziE-jP-I4n" firstAttribute="trailing" secondItem="kkO-XN-nmp" secondAttribute="trailing" constant="-1" id="t5l-9v-4Sh"/>
+                                <constraint firstItem="Ixy-fB-k1C" firstAttribute="centerX" secondItem="ziE-jP-I4n" secondAttribute="centerX" id="vIW-QE-bW9"/>
                                 <constraint firstItem="kkO-XN-nmp" firstAttribute="centerX" secondItem="3Vg-Vm-0mz" secondAttribute="centerX" id="x5V-7g-MS2"/>
                                 <constraint firstItem="ziE-jP-I4n" firstAttribute="leading" secondItem="nNZ-kJ-BX7" secondAttribute="trailing" constant="-11" id="xek-se-vYI"/>
                             </constraints>
                         </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAY SAGA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQo-CS-K7u" customClass="GradientButtonLabel" customModule="ClaweeUI" customModuleProvider="target">
+                            <rect key="frame" x="80" y="53" width="64" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="nhd-Gj-HXz"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Neuron-Black" family="Neuron" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="lineHeightMultiple">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="outlineWidth">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
+                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="OpW-wz-02a" firstAttribute="top" secondItem="BgE-1O-b0C" secondAttribute="bottom" id="1AZ-09-2gD"/>
                         <constraint firstItem="3Vg-Vm-0mz" firstAttribute="centerX" secondItem="rnN-II-SVC" secondAttribute="centerX" id="1Jh-fW-C61"/>
                         <constraint firstItem="OpW-wz-02a" firstAttribute="centerX" secondItem="rnN-II-SVC" secondAttribute="centerX" id="2sd-IL-QDy"/>
-                        <constraint firstItem="BgE-1O-b0C" firstAttribute="centerX" secondItem="rnN-II-SVC" secondAttribute="centerX" id="8Ju-AU-LQV"/>
                         <constraint firstItem="3Vg-Vm-0mz" firstAttribute="top" secondItem="rnN-II-SVC" secondAttribute="bottom" constant="-16" id="Ejd-Jw-fYW"/>
+                        <constraint firstItem="rnN-II-SVC" firstAttribute="top" secondItem="AQo-CS-K7u" secondAttribute="bottom" constant="1" id="Lvj-qY-qnP"/>
+                        <constraint firstItem="AQo-CS-K7u" firstAttribute="centerX" secondItem="rnN-II-SVC" secondAttribute="centerX" id="XDv-9S-DDp"/>
                         <constraint firstItem="rnN-II-SVC" firstAttribute="centerX" secondItem="hy8-gn-8pI" secondAttribute="centerX" id="XzL-tU-12M"/>
                         <constraint firstItem="rnN-II-SVC" firstAttribute="top" secondItem="OpW-wz-02a" secondAttribute="bottom" constant="-16" id="cVt-lY-lMP"/>
                         <constraint firstItem="rnN-II-SVC" firstAttribute="centerY" secondItem="hy8-gn-8pI" secondAttribute="centerY" id="i6W-lt-qbu"/>
@@ -147,8 +173,5 @@
         <image name="map" width="73" height="66"/>
         <image name="saga_heart-min" width="36" height="33"/>
         <image name="timerBar" width="54.5" height="18"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

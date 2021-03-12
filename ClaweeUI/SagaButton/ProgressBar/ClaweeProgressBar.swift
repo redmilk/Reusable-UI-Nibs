@@ -13,9 +13,11 @@ struct ClaweeProgressBarEntity {
     let fillImage: String
     let text: String?
     let progressFromZeroToOne: CGFloat
+    let animationDuration: TimeInterval = 0
 }
 
 //In order for the ClaweeProgressBar to work (look) correctly, use the assets with NO PADDINGS only - ask your designer to help
+
 
 final class ClaweeProgressBar: NibView {
     @IBOutlet private weak var fillImagePlaceholder: UIView!
@@ -25,6 +27,7 @@ final class ClaweeProgressBar: NibView {
     private var fillImage: UIImageView?
     private var widthMultiplier: CGFloat = 0
     
+    private var progressAnimationDuration: TimeInterval = 0
     private var fillImagePlaceholderHeight: NSLayoutConstraint!
     private var fillImagePlaceholderWidth: NSLayoutConstraint!
     private var widthConstraint: NSLayoutConstraint!
@@ -37,7 +40,7 @@ final class ClaweeProgressBar: NibView {
             width: widthMultiplier * fillImagePlaceholder.frame.width,
             height: fillImagePlaceholder.frame.height)
         
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: progressAnimationDuration) {
             self.fillImage?.frame = newRect
         }
     }
@@ -64,7 +67,8 @@ final class ClaweeProgressBar: NibView {
         set(progres: entity.progressFromZeroToOne, text: entity.text)
     }
     
-    func set(progres multiplier: CGFloat = 0, text: String? = nil) {
+    func set(progres multiplier: CGFloat = 0, text: String? = nil, animationDuration: TimeInterval = 0.0) {
+        progressAnimationDuration = animationDuration
         self.widthMultiplier = multiplier
         textLabel.text = text
         setNeedsLayout()
