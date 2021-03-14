@@ -86,7 +86,7 @@ extension PlaySagaButton {
     }
     
     #warning("This is for presentation purpose. Delete it later")
-    public func dummyCurrentXibDemo() {
+    public func dummyXibDemo() {
         let today: Date = Date()
         let nextDate: Date = Calendar.current.date(byAdding: .day, value: 3, to: today)!
         
@@ -100,7 +100,7 @@ extension PlaySagaButton {
                                                        heartProgressState: heartProgressState)
         
         self.update(with: PlaySagaButton.State.initial(initialState))
-        heartLevelProgress.dummyCurrentXibDemo()
+        heartLevelProgress.dummyXibDemo()
     }
 }
 

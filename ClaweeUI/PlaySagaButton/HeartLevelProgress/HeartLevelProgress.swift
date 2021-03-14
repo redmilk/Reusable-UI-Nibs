@@ -118,7 +118,7 @@ fileprivate let progressAnimationDuration: TimeInterval = 1.0
 
 extension HeartLevelProgress {
     #warning("Heart level progress test demo")
-    public func dummyCurrentXibDemo() {
+    public func dummyXibDemo() {
         let heartProgressState = State(progress: 0.2, heartsCount: 3)
         setInitialState(with: heartProgressState)
         

@@ -20,8 +20,8 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        sagaButton.dummyCurrentXibDemo()
-        heartLevelProgress.dummyCurrentXibDemo()
+        sagaButton.dummyXibDemo()
+        heartLevelProgress.dummyXibDemo()
     }
 
 }
