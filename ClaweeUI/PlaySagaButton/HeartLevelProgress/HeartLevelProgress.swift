@@ -7,15 +7,9 @@
 
 import UIKit
 
-fileprivate let heartLabelTextColor: UIColor = #colorLiteral(red: 0.999904573, green: 1, blue: 0.999872148, alpha: 1)
-fileprivate let heartLabelTextOutlineColor: UIColor = #colorLiteral(red: 0.002456023358, green: 0.1475411057, blue: 0.1803093255, alpha: 1)
-fileprivate let heartLabelTextOutlineWidth: CGFloat = 1.0
-fileprivate let progressBackgroundImageName: String = "heartBar"
-fileprivate let progressFillImageName: String = "fill"
 fileprivate let progressAnimationDuration: TimeInterval = 1.0
 
-@IBDesignable
-final class HeartLevelProgress: UIView {
+@IBDesignable final class HeartLevelProgress: UIView {
     
     struct State {
         let progress: CGFloat
@@ -26,6 +20,13 @@ final class HeartLevelProgress: UIView {
     @IBOutlet private weak var progressBar: ClaweeProgressBar!
     @IBOutlet private weak var heartCounterLabel: GradientButtonLabel!
     @IBOutlet private weak var heartImageView: UIImageView!
+    
+    @IBInspectable private var heartLabelText: String = "99" { didSet { self.configureView() } }
+    @IBInspectable private var heartLabelTextColor: UIColor = #colorLiteral(red: 0.999904573, green: 1, blue: 0.999872148, alpha: 1) { didSet { self.configureView() } }
+    @IBInspectable private var heartLabelTextOutlineColor: UIColor = #colorLiteral(red: 0.002456023358, green: 0.1475411057, blue: 0.1803093255, alpha: 1) { didSet { self.configureView() } }
+    @IBInspectable private var heartLabelTextOutlineWidth: CGFloat = 1.0 { didSet { self.configureView() } }
+    @IBInspectable private var progressBackgroundImageName: String = "heartBar" { didSet { self.configureView() } }
+    @IBInspectable private var progressFillImageName: String = "fill" { didSet { self.configureView() } }
     
     private var currentState: State!
     
@@ -82,6 +83,8 @@ final class HeartLevelProgress: UIView {
     }
     
     private func configureView() {
+        heartCounterLabel.text = heartLabelText
+        heartCounterLabel.textColor = heartLabelTextColor
         heartCounterLabel.outlineWidth = heartLabelTextOutlineWidth
         heartCounterLabel.outlineColor = heartLabelTextOutlineColor
         let progressBarModel = ClaweeProgressBarEntity(backgroundImage: progressBackgroundImageName,

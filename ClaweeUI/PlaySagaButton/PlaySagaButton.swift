@@ -7,12 +7,6 @@
 
 import UIKit
 
-fileprivate let topTitleLabelTextColor: UIColor = #colorLiteral(red: 0.9464059472, green: 0.1310599148, blue: 0.3974712491, alpha: 1)
-fileprivate let topTitleLabelTextOutlineColor: UIColor = #colorLiteral(red: 0.999904573, green: 1, blue: 0.999872148, alpha: 1)
-fileprivate let topTitleLabelTextOutlineWidth: CGFloat = 3.0
-fileprivate let topTitleLabelText: String = "PLAY SAGA"
-fileprivate let timerLabelTextColor: UIColor = #colorLiteral(red: 0.9510774016, green: 0.9408319592, blue: 0.02456314303, alpha: 1)
-
 extension PlaySagaButton {
     
     /// States of the xib's components
@@ -36,8 +30,8 @@ extension PlaySagaButton {
     }
 }
 
-@IBDesignable
-final class PlaySagaButton: TouchScaleButton {
+
+@IBDesignable final class PlaySagaButton: TouchScaleButton {
 
     @IBOutlet private weak var contentView: UIView!
     @IBOutlet private weak var containerView: UIView!
@@ -45,6 +39,12 @@ final class PlaySagaButton: TouchScaleButton {
     @IBOutlet private weak var timerContainerView: UIView!
     @IBOutlet private weak var timerLabel: UILabel!
     @IBOutlet private weak var heartLevelProgress: HeartLevelProgress!
+    
+    @IBInspectable private var topTitleLabelTextColor: UIColor = #colorLiteral(red: 0.9464059472, green: 0.1310599148, blue: 0.3974712491, alpha: 1)  { didSet { configureView() } }
+    @IBInspectable private var topTitleLabelTextOutlineColor: UIColor = #colorLiteral(red: 0.999904573, green: 1, blue: 0.999872148, alpha: 1)  { didSet { configureView() } }
+    @IBInspectable private var topTitleLabelTextOutlineWidth: CGFloat = 3.0  { didSet { configureView() } }
+    @IBInspectable private var topTitleLabelText: String = "PLAY SAGA" { didSet { configureView() } }
+    @IBInspectable private var timerLabelTextColor: UIColor = #colorLiteral(red: 0.9510774016, green: 0.9408319592, blue: 0.02456314303, alpha: 1)  { didSet { configureView() } }
     
     private var currentState: InitialState!
     private let timer: ClaweeTimer = ClaweeTimer()

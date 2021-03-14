@@ -22,6 +22,12 @@
                                     <constraint firstAttribute="width" constant="100" id="2t7-DO-bJh"/>
                                     <constraint firstAttribute="height" constant="100" id="ghH-UX-9k5"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="topTitleLabelText" value="PLAY SAGA"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="topTitleLabelTextOutlineWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kdu-d3-joR" customClass="HeartLevelProgress" customModule="ClaweeUI" customModuleProvider="target">
                                 <rect key="frame" x="154.5" y="270" width="105" height="33"/>
@@ -30,6 +36,16 @@
                                     <constraint firstAttribute="width" constant="105" id="HGW-ms-GSG"/>
                                     <constraint firstAttribute="height" constant="33" id="h6n-E4-DKe"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="heartProgressValue">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heartLabelText" value="99"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="heartLabelTextOutlineWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeartProgressTextShown" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
