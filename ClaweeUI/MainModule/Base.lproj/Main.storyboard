@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -11,32 +12,48 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ClaweeUI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kV-tW-Al7" customClass="PlaySagaButton" customModule="ClaweeUI" customModuleProvider="target">
-                                <rect key="frame" x="250" y="250" width="100" height="100"/>
+                                <rect key="frame" x="157" y="403" width="100" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="2t7-DO-bJh"/>
                                     <constraint firstAttribute="height" constant="100" id="ghH-UX-9k5"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kdu-d3-joR" customClass="HeartLevelProgress" customModule="ClaweeUI" customModuleProvider="target">
+                                <rect key="frame" x="154.5" y="270" width="105" height="33"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="HGW-ms-GSG"/>
+                                    <constraint firstAttribute="height" constant="33" id="h6n-E4-DKe"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="5kV-tW-Al7" firstAttribute="top" secondItem="Kdu-d3-joR" secondAttribute="bottom" constant="100" id="G6r-A3-LEb"/>
+                            <constraint firstItem="Kdu-d3-joR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jU9-lc-Rxi"/>
                             <constraint firstItem="5kV-tW-Al7" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="rif-0J-M4M"/>
                             <constraint firstItem="5kV-tW-Al7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zDh-SJ-rSE"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="heartLevelProgress" destination="Kdu-d3-joR" id="Q0C-14-NiZ"/>
                         <outlet property="sagaButton" destination="5kV-tW-Al7" id="3Eh-dO-UxR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-14.492753623188406" y="16.741071428571427"/>
+            <point key="canvasLocation" x="-107" y="-74"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="5kV-tW-Al7">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+    </designables>
 </document>

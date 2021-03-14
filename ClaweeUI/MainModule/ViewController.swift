@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var sagaButton: PlaySagaButton!
+    @IBOutlet weak var heartLevelProgress: HeartLevelProgress!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,7 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         
         sagaButton.dummyCurrentXibDemo()
+        heartLevelProgress.dummyCurrentXibDemo()
     }
 
 }

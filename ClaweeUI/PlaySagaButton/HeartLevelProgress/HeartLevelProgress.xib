@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Neuron ExtraBold.otf">
+            <string>Neuron-ExtraBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeartLevelProgress" customModule="ClaweeUI" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="QnV-8N-A62"/>
+                <outlet property="heartCounterLabel" destination="ziT-EK-Z3a" id="rJF-b9-Lp5"/>
+                <outlet property="heartImageView" destination="X5j-bG-I5D" id="aid-gt-QMh"/>
+                <outlet property="progressBar" destination="6LJ-Ri-ac6" id="jzg-0N-Mni"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="contentView">
+            <rect key="frame" x="0.0" y="0.0" width="101" height="36"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6km-UO-otH" userLabel="progress">
+                    <rect key="frame" x="24.5" y="5" width="52" height="26"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barBackWhite" translatesAutoresizingMaskIntoConstraints="NO" id="VsC-oT-c5W">
+                            <rect key="frame" x="0.0" y="1" width="52" height="24"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="1R6-8w-OYM"/>
+                                <constraint firstAttribute="width" constant="52" id="lQ2-JF-xdo"/>
+                            </constraints>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6LJ-Ri-ac6" customClass="ClaweeProgressBar" customModule="ClaweeUI" customModuleProvider="target">
+                            <rect key="frame" x="2" y="6.5" width="35" height="13"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="13" id="L1P-UD-XmP"/>
+                            </constraints>
+                        </view>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saga_heart-min" translatesAutoresizingMaskIntoConstraints="NO" id="X5j-bG-I5D">
+                            <rect key="frame" x="26" y="1.5" width="25" height="23"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="23" id="Sxb-Vd-HLf"/>
+                                <constraint firstAttribute="width" constant="25" id="yPe-Nf-hqe"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziT-EK-Z3a" customClass="GradientButtonLabel" customModule="ClaweeUI" customModuleProvider="target">
+                            <rect key="frame" x="28" y="3.5" width="21" height="17"/>
+                            <fontDescription key="fontDescription" name="Neuron-ExtraBold" family="Neuron" pointSize="12"/>
+                            <color key="textColor" red="1" green="0.99998790029999995" blue="0.9999920726" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="X5j-bG-I5D" firstAttribute="centerY" secondItem="VsC-oT-c5W" secondAttribute="centerY" id="53l-Vl-QqL"/>
+                        <constraint firstItem="VsC-oT-c5W" firstAttribute="centerY" secondItem="6km-UO-otH" secondAttribute="centerY" id="DKs-Tf-hqq"/>
+                        <constraint firstItem="VsC-oT-c5W" firstAttribute="centerX" secondItem="6km-UO-otH" secondAttribute="centerX" id="ErV-fp-fCw"/>
+                        <constraint firstAttribute="height" constant="26" id="FC1-mj-GnG"/>
+                        <constraint firstItem="X5j-bG-I5D" firstAttribute="leading" secondItem="6LJ-Ri-ac6" secondAttribute="trailing" constant="-11" id="GPp-wm-sKH"/>
+                        <constraint firstItem="6LJ-Ri-ac6" firstAttribute="centerY" secondItem="VsC-oT-c5W" secondAttribute="centerY" id="Idf-Nm-rYo"/>
+                        <constraint firstItem="ziT-EK-Z3a" firstAttribute="width" secondItem="X5j-bG-I5D" secondAttribute="width" multiplier="0.84" id="K1j-KZ-7dm"/>
+                        <constraint firstItem="ziT-EK-Z3a" firstAttribute="height" secondItem="X5j-bG-I5D" secondAttribute="height" multiplier="0.73913" id="Qwm-Aa-iZK"/>
+                        <constraint firstAttribute="width" constant="52" id="Tqp-0v-B1x"/>
+                        <constraint firstItem="6LJ-Ri-ac6" firstAttribute="leading" secondItem="VsC-oT-c5W" secondAttribute="leading" constant="2" id="cYh-Uf-BZ2"/>
+                        <constraint firstItem="ziT-EK-Z3a" firstAttribute="centerY" secondItem="X5j-bG-I5D" secondAttribute="centerY" constant="-1" id="okc-dK-zgh"/>
+                        <constraint firstItem="X5j-bG-I5D" firstAttribute="trailing" secondItem="VsC-oT-c5W" secondAttribute="trailing" constant="-1" id="y2p-qU-H6H"/>
+                        <constraint firstItem="ziT-EK-Z3a" firstAttribute="centerX" secondItem="X5j-bG-I5D" secondAttribute="centerX" id="yf3-dh-P75"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="6km-UO-otH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Nav-pe-obg"/>
+                <constraint firstItem="6km-UO-otH" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="xkf-9R-srI"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-178.98550724637681" y="-142.63392857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="barBackWhite" width="55" height="26"/>
+        <image name="saga_heart-min" width="36" height="33"/>
+    </resources>
+</document>

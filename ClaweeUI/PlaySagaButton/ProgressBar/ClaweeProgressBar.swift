@@ -17,7 +17,7 @@ struct ClaweeProgressBarEntity {
 
 //In order for the ClaweeProgressBar to work (look) correctly, use the assets with NO PADDINGS only - ask your designer to help
 
-
+@IBDesignable
 final class ClaweeProgressBar: NibView {
     @IBOutlet private weak var fillImagePlaceholder: UIView!
     @IBOutlet private weak var background: UIImageView!

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,30 +12,24 @@
         <array key="Neuron Bold.otf">
             <string>Neuron-Bold</string>
         </array>
-        <array key="Neuron ExtraBold.otf">
-            <string>Neuron-ExtraBold</string>
-        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlaySagaButton" customModule="ClaweeUI" customModuleProvider="target">
             <connections>
                 <outlet property="containerView" destination="hy8-gn-8pI" id="LLk-df-KKz"/>
                 <outlet property="contentView" destination="2Rx-hV-dec" id="aru-P6-cVJ"/>
-                <outlet property="heartCounterLabel" destination="Ixy-fB-k1C" id="FvV-Ow-Pg7"/>
-                <outlet property="heartImageView" destination="ziE-jP-I4n" id="NwQ-yI-NRC"/>
-                <outlet property="progressBar" destination="nNZ-kJ-BX7" id="xfn-Gx-WkO"/>
-                <outlet property="progressContainerView" destination="3Vg-Vm-0mz" id="aCj-Ny-J9N"/>
+                <outlet property="heartLevelProgress" destination="3Vg-Vm-0mz" id="hmZ-mc-wIK"/>
                 <outlet property="timerContainerView" destination="OpW-wz-02a" id="QDu-co-xFR"/>
                 <outlet property="timerLabel" destination="WPC-bh-Wtj" id="xEL-Hg-U3c"/>
                 <outlet property="topTitleLabel" destination="AQo-CS-K7u" id="hL0-P1-aG8"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="2Rx-hV-dec">
+        <view contentMode="scaleToFill" id="2Rx-hV-dec" userLabel="ContentView">
             <rect key="frame" x="0.0" y="0.0" width="224" height="220"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hy8-gn-8pI" userLabel="containerView">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hy8-gn-8pI" userLabel="ContainerView">
                     <rect key="frame" x="0.0" y="0.0" width="224" height="220"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="rnN-II-SVC">
@@ -44,7 +39,7 @@
                                 <constraint firstAttribute="height" constant="70" id="Flu-EB-e8s"/>
                             </constraints>
                         </imageView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OpW-wz-02a" userLabel="timer">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OpW-wz-02a" userLabel="PromotionTimer">
                             <rect key="frame" x="86" y="67" width="52" height="24"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timerBar" translatesAutoresizingMaskIntoConstraints="NO" id="vJa-qK-jyt">
@@ -55,7 +50,7 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11h:11m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPC-bh-Wtj">
-                                    <rect key="frame" x="2.5" y="5" width="47" height="14"/>
+                                    <rect key="frame" x="6" y="5" width="40" height="14"/>
                                     <fontDescription key="fontDescription" name="Neuron-Bold" family="Neuron" pointSize="12"/>
                                     <color key="textColor" red="0.97574084999999999" green="0.88994425539999999" blue="0.29764252899999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <nil key="highlightedColor"/>
@@ -71,57 +66,16 @@
                                 <constraint firstAttribute="height" constant="24" id="lFs-MM-skt"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Vg-Vm-0mz" userLabel="progress">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Vg-Vm-0mz" userLabel="HeartLevelProgress" customClass="HeartLevelProgress" customModule="ClaweeUI" customModuleProvider="target">
                             <rect key="frame" x="86" y="129" width="52" height="26"/>
-                            <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barBackWhite" translatesAutoresizingMaskIntoConstraints="NO" id="kkO-XN-nmp">
-                                    <rect key="frame" x="0.0" y="1" width="52" height="24"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="24" id="Oh2-M8-Yxg"/>
-                                        <constraint firstAttribute="width" constant="52" id="uUi-Gf-owM"/>
-                                    </constraints>
-                                </imageView>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nNZ-kJ-BX7" customClass="ClaweeProgressBar" customModule="ClaweeUI" customModuleProvider="target">
-                                    <rect key="frame" x="2" y="6.5" width="35" height="13"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="13" id="PS0-dr-x5w"/>
-                                    </constraints>
-                                </view>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saga_heart-min" translatesAutoresizingMaskIntoConstraints="NO" id="ziE-jP-I4n">
-                                    <rect key="frame" x="26" y="1.5" width="25" height="23"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="23" id="DzR-B1-cM0"/>
-                                        <constraint firstAttribute="width" constant="25" id="TME-RC-TJA"/>
-                                    </constraints>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixy-fB-k1C" customClass="GradientButtonLabel" customModule="ClaweeUI" customModuleProvider="target">
-                                    <rect key="frame" x="28" y="3.5" width="21" height="17"/>
-                                    <fontDescription key="fontDescription" name="Neuron-ExtraBold" family="Neuron" pointSize="12"/>
-                                    <color key="textColor" red="1" green="0.99998790029999995" blue="0.9999920726" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="Ixy-fB-k1C" firstAttribute="centerY" secondItem="ziE-jP-I4n" secondAttribute="centerY" constant="-1" id="BSy-a4-6Mh"/>
-                                <constraint firstItem="ziE-jP-I4n" firstAttribute="centerY" secondItem="kkO-XN-nmp" secondAttribute="centerY" id="DdD-eX-b3g"/>
-                                <constraint firstItem="Ixy-fB-k1C" firstAttribute="height" secondItem="ziE-jP-I4n" secondAttribute="height" multiplier="0.73913" id="MI2-Bz-X0u"/>
-                                <constraint firstItem="Ixy-fB-k1C" firstAttribute="width" secondItem="ziE-jP-I4n" secondAttribute="width" multiplier="0.84" id="OQA-XD-WH7"/>
-                                <constraint firstItem="nNZ-kJ-BX7" firstAttribute="centerY" secondItem="kkO-XN-nmp" secondAttribute="centerY" id="SRk-dc-ni4"/>
-                                <constraint firstItem="nNZ-kJ-BX7" firstAttribute="leading" secondItem="kkO-XN-nmp" secondAttribute="leading" constant="2" id="Smg-yF-6d2"/>
-                                <constraint firstItem="kkO-XN-nmp" firstAttribute="centerY" secondItem="3Vg-Vm-0mz" secondAttribute="centerY" id="X9w-6H-a0m"/>
                                 <constraint firstAttribute="height" constant="26" id="cV4-tU-cG6"/>
                                 <constraint firstAttribute="width" constant="52" id="hPB-Qp-ca6"/>
-                                <constraint firstItem="ziE-jP-I4n" firstAttribute="trailing" secondItem="kkO-XN-nmp" secondAttribute="trailing" constant="-1" id="t5l-9v-4Sh"/>
-                                <constraint firstItem="Ixy-fB-k1C" firstAttribute="centerX" secondItem="ziE-jP-I4n" secondAttribute="centerX" id="vIW-QE-bW9"/>
-                                <constraint firstItem="kkO-XN-nmp" firstAttribute="centerX" secondItem="3Vg-Vm-0mz" secondAttribute="centerX" id="x5V-7g-MS2"/>
-                                <constraint firstItem="ziE-jP-I4n" firstAttribute="leading" secondItem="nNZ-kJ-BX7" secondAttribute="trailing" constant="-11" id="xek-se-vYI"/>
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAY SAGA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQo-CS-K7u" customClass="GradientButtonLabel" customModule="ClaweeUI" customModuleProvider="target">
-                            <rect key="frame" x="71.5" y="53" width="81.5" height="21"/>
+                            <rect key="frame" x="80" y="53" width="64" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="nhd-Gj-HXz"/>
                             </constraints>
@@ -165,13 +119,11 @@
                 <constraint firstItem="hy8-gn-8pI" firstAttribute="top" secondItem="2Rx-hV-dec" secondAttribute="top" id="u92-hm-TWr"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="140.57971014492756" y="-135.26785714285714"/>
+            <point key="canvasLocation" x="-257" y="-139"/>
         </view>
     </objects>
     <resources>
-        <image name="barBackWhite" width="55" height="26"/>
         <image name="map" width="73" height="66"/>
-        <image name="saga_heart-min" width="36" height="33"/>
         <image name="timerBar" width="54.5" height="18"/>
     </resources>
 </document>
