@@ -14,15 +14,18 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        sagaButton.dummyXibDemo()
+
+        sagaButton.dummyXibDemo() {
+            Logger.log("Play button pressed")
+        }
         heartLevelProgress.dummyXibDemo()
+        
     }
+  
 
 }
 

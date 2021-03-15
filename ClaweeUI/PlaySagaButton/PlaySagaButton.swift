@@ -19,9 +19,11 @@ extension PlaySagaButton {
     /// this state we use once during initial setup of this xib
     /// other states we use for separated updates of xib's components during lifecycle
     struct InitialState {
-        var isTopTitleHidden: Bool
         var timerState: TimerState
         var heartProgressState: HeartLevelProgress.State
+        
+        let isTopTitleHidden: Bool
+        let buttonAction: (() -> Void)!
     }
     
     struct TimerState {
@@ -85,8 +87,13 @@ extension PlaySagaButton {
         timer.stopTimer()
     }
     
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        currentState.buttonAction()
+    }
+    
     #warning("This is for presentation purpose. Delete it later")
-    public func dummyXibDemo() {
+    public func dummyXibDemo(action: @escaping () -> Void) {
         let today: Date = Date()
         let nextDate: Date = Calendar.current.date(byAdding: .day, value: 3, to: today)!
         
@@ -94,12 +101,13 @@ extension PlaySagaButton {
         let timerState = PlaySagaButton.TimerState(timerExpirationDate: nextDate) {
             Logger.log("Timer time has gone", type: .all)
         }
+                
+        let initialState = InitialState(timerState: timerState,
+                                        heartProgressState: heartProgressState,
+                                        isTopTitleHidden: false,
+                                        buttonAction: action)
         
-        let initialState = PlaySagaButton.InitialState(isTopTitleHidden: false,
-                                                       timerState: timerState,
-                                                       heartProgressState: heartProgressState)
-        
-        self.update(with: PlaySagaButton.State.initial(initialState))
+        update(with: PlaySagaButton.State.initial(initialState))
         heartLevelProgress.dummyXibDemo()
     }
 }
