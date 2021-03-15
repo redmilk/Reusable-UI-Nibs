@@ -125,7 +125,6 @@ private extension PlaySagaButton {
     
     // MARK: - Internal helpers
     private func startTimer(expirationDate: Date, timerDidEnd: (() -> Void)?) {
-        timerLabel.text = String.timeStringForExpirationTime(using: expirationDate.timeIntervalSince1970, isShortFormat: false)
         timer.run(tillExpirationDateInMillisecondsSince1970: expirationDate.timeIntervalSince1970 * 1000,
                   timeInterval: 1,
                   shortTimerFormat: false,
