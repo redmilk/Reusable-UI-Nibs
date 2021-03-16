@@ -10,6 +10,8 @@ import UIKit
 
 extension UIView {
     
+    // MARK: - Nib
+    
     func loadViewFromNib(nibName: String) -> UIView {
         let bundle = Bundle(for: Self.self)
         let nib = UINib(nibName: nibName, bundle: bundle)
@@ -32,4 +34,32 @@ extension UIView {
         ])
     }
     
+    // MARK: - Styling
+    
+    func setShadow(withCornerRadius corner: CGFloat, color: UIColor, radius: CGFloat? = 3, opacity: Float? = 0.4) {
+        self.layer.shadowOffset = CGSize(width: 0, height: 2)
+        self.layer.shadowColor = color.cgColor
+        self.layer.shadowPath = CGPath(roundedRect: self.bounds, cornerWidth: corner, cornerHeight: corner, transform: nil)
+        self.layer.shadowRadius = radius ?? 3
+        self.layer.shadowOpacity = opacity ?? 0.4
+        self.layer.bounds = self.bounds
+    }
+    
+    func add(radius: CGFloat, toCorners corners: UIRectCorner) {
+        if #available(iOS 11.0, *) {
+            clipsToBounds = true
+            layer.cornerRadius = radius
+            layer.maskedCorners = CACornerMask(rawValue: corners.rawValue)
+        } else {
+            clipsToBounds = true
+            let path = UIBezierPath(
+                roundedRect: bounds,
+                byRoundingCorners: corners,
+                cornerRadii: CGSize(width: radius, height: radius))
+            let maskLayer = CAShapeLayer()
+            
+            maskLayer.path = path.cgPath
+            layer.mask = maskLayer
+        }
+    }
 }

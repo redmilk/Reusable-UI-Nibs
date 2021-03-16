@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kV-tW-Al7" customClass="PlaySagaButton" customModule="ClaweeUI" customModuleProvider="target">
-                                <rect key="frame" x="157" y="403" width="100" height="100"/>
+                                <rect key="frame" x="157" y="752" width="100" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="2t7-DO-bJh"/>
@@ -30,7 +32,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kdu-d3-joR" customClass="HeartLevelProgress" customModule="ClaweeUI" customModuleProvider="target">
-                                <rect key="frame" x="154.5" y="270" width="105" height="33"/>
+                                <rect key="frame" x="154.5" y="709" width="105" height="33"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="105" id="HGW-ms-GSG"/>
@@ -47,13 +49,23 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHeartProgressTextShown" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9x3-vI-aZO" customClass="SagaOutOfLivesPopup" customModule="ClaweeUI" customModuleProvider="target">
+                                <rect key="frame" x="87" y="61" width="240" height="169"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="169" id="EDo-fL-OIm"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="5kV-tW-Al7" firstAttribute="top" secondItem="Kdu-d3-joR" secondAttribute="bottom" constant="100" id="G6r-A3-LEb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Kdu-d3-joR" secondAttribute="bottom" constant="120" id="2e6-4v-lmc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9x3-vI-aZO" secondAttribute="trailing" constant="87" id="BSA-zc-Ipu"/>
+                            <constraint firstItem="5kV-tW-Al7" firstAttribute="top" secondItem="Kdu-d3-joR" secondAttribute="bottom" constant="10" id="G6r-A3-LEb"/>
+                            <constraint firstItem="9x3-vI-aZO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="a9R-OZ-vML"/>
+                            <constraint firstItem="9x3-vI-aZO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="17" id="hlz-b3-ajS"/>
                             <constraint firstItem="Kdu-d3-joR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jU9-lc-Rxi"/>
-                            <constraint firstItem="5kV-tW-Al7" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="rif-0J-M4M"/>
                             <constraint firstItem="5kV-tW-Al7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zDh-SJ-rSE"/>
                         </constraints>
                     </view>
@@ -64,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-107" y="-74"/>
+            <point key="canvasLocation" x="-843.47826086956525" y="-108.48214285714285"/>
         </scene>
     </scenes>
     <designables>
@@ -72,4 +84,9 @@
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
     </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

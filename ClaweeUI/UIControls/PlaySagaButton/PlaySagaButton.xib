@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -67,7 +68,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Vg-Vm-0mz" userLabel="HeartLevelProgress" customClass="HeartLevelProgress" customModule="ClaweeUI" customModuleProvider="target">
-                            <rect key="frame" x="86" y="129" width="52" height="26"/>
+                            <rect key="frame" x="86" y="126" width="52" height="26"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="26" id="cV4-tU-cG6"/>
@@ -102,7 +103,7 @@
                     <constraints>
                         <constraint firstItem="3Vg-Vm-0mz" firstAttribute="centerX" secondItem="rnN-II-SVC" secondAttribute="centerX" id="1Jh-fW-C61"/>
                         <constraint firstItem="OpW-wz-02a" firstAttribute="centerX" secondItem="rnN-II-SVC" secondAttribute="centerX" id="2sd-IL-QDy"/>
-                        <constraint firstItem="3Vg-Vm-0mz" firstAttribute="top" secondItem="rnN-II-SVC" secondAttribute="bottom" constant="-16" id="Ejd-Jw-fYW"/>
+                        <constraint firstItem="3Vg-Vm-0mz" firstAttribute="top" secondItem="rnN-II-SVC" secondAttribute="bottom" constant="-19" id="Ejd-Jw-fYW"/>
                         <constraint firstItem="rnN-II-SVC" firstAttribute="top" secondItem="AQo-CS-K7u" secondAttribute="bottom" constant="1" id="Lvj-qY-qnP"/>
                         <constraint firstItem="AQo-CS-K7u" firstAttribute="centerX" secondItem="rnN-II-SVC" secondAttribute="centerX" id="XDv-9S-DDp"/>
                         <constraint firstItem="rnN-II-SVC" firstAttribute="centerX" secondItem="hy8-gn-8pI" secondAttribute="centerX" id="XzL-tU-12M"/>
